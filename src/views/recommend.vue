@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import { getRecommend } from '@/service/recommend'
+import { getRecommend } from "@/service/recommend";
 
 export default {
   data() {
-    return {}
+    return {};
   },
   async created() {
-    const result = await getRecommend()
-    console.log('result', result)
-  }
-}
+    const result = await getRecommend();
+    console.log("result", result);
+  },
+};
 </script>
