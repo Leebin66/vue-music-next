@@ -1,0 +1,28 @@
+<template>
+  <di ref="rootRef">
+    <slot></slot>
+  </di>
+</template>
+
+<script>
+import useScroll from "./user-scroll";
+import { ref } from "vue";
+
+export default {
+  name: "scroll",
+  props: {
+    click: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  setup(props) {
+    const rootRef = ref(null);
+    useScroll(rootRef, props);
+
+    return {
+      rootRef,
+    };
+  },
+};
+</script>

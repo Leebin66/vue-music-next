@@ -10,6 +10,7 @@ export default function useSlider(wrapperRef) {
   const currentPageIndex = ref(0);
 
   onMounted(() => {
+    // wrapperRef.value 对应容器 dom 对象
     const sliderVal = (slider.value = new BScroll(wrapperRef.value, {
       click: true,
       scrollX: true,
@@ -20,11 +21,13 @@ export default function useSlider(wrapperRef) {
       slide: true,
     }));
 
+    // 当前页码
     sliderVal.on("slideWillChange", (page) => {
       currentPageIndex.value = page.pageX;
     });
   });
 
+  // 销毁
   onUnmounted(() => {
     slider.value.destroy();
   });

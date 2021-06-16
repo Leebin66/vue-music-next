@@ -4,7 +4,7 @@ const ERR_OK = 0;
 const baseURL =
   process.env.NODE_ENV === "production"
     ? "http://ustbhuangyi.com/music-next/"
-    : "/";
+    : "/"; // 定义 baseUrl 地址
 
 axios.defaults.baseURL = baseURL;
 

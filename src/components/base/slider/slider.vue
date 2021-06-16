@@ -34,7 +34,7 @@ export default {
     },
   },
   setup() {
-    const rootRef = ref(null);
+    const rootRef = ref(null); // 获取dom节点
     const { currentPageIndex } = useSlider(rootRef);
 
     return {
@@ -50,6 +50,7 @@ export default {
   min-height: 1px;
   font-size: 0;
   touch-action: pan-y;
+  position: relative;
   .slider-group {
     position: relative;
     overflow: hidden;
