@@ -1,7 +1,7 @@
 <template>
-  <di ref="rootRef">
+  <div ref="rootRef">
     <slot></slot>
-  </di>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 import BScroll from "@better-scroll/core";
-import ObserveDOM from "@better-scroll/observe-dom";
+import ObserveDOM from "@better-scroll/observe-dom"; // https://better-scroll.github.io/docs/zh-CN/plugins/observe-dom.html
 
 BScroll.use(ObserveDOM);
 

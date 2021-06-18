@@ -1,7 +1,7 @@
 <template>
   <!-- 推荐页面 -->
   <div class="recommend" v-loading:[loadingText]="loading">
-    <div class="recommend-content">
+    <scroll class="recommend-content">
       <div>
         <!-- 轮播图 -->
         <div class="slider-wrapper">
@@ -34,19 +34,19 @@
           </ul>
         </div>
       </div>
-    </div>
+    </scroll>
   </div>
 </template>
 
 <script>
 import { getRecommend } from "@/service/recommend";
 import Slider from "@/components/base/slider/slider";
-// import Scroll from "@/components/base/scroll/scroll";
+import Scroll from "@/components/base/scroll/scroll";
 
 export default {
   components: {
     Slider,
-    // Scroll,
+    Scroll,
   },
   data() {
     return {
