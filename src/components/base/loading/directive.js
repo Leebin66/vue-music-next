@@ -9,7 +9,6 @@ const loadingDirective = {
     // 组件挂载的钩子函数
     const app = createApp(Loading); // 创建实例
     const instance = app.mount(document.createElement("div"));
-    // console.log('')
     el.instance = instance;
     const title = binding.arg;
     if (typeof title !== "undefined") {
@@ -32,7 +31,7 @@ const loadingDirective = {
 };
 
 function append(el) {
-  const style = getComputedStyle(el);
+  const style = getComputedStyle(el); // https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle
   if (["absolute", "fixed", "relative"].indexOf(style.position) === -1) {
     addClass(el, relativeCls);
   }
