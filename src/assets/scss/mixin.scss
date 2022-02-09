@@ -6,11 +6,19 @@
   }
 }
 
-// 禁止折行
+// 禁止文本折行（单行）
 @mixin no-wrap() {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+// 禁止文本折行（多行）
+@mixin no-wrap-num($num) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+  overflow: hidden;
 }
 
 // 扩展小图标按钮的点击区域
