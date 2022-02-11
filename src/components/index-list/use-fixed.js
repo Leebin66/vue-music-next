@@ -1,13 +1,15 @@
 import { ref, watch, computed, nextTick } from "vue";
 
 export default function useFixed(props) {
-  console.log("use-fixed", props.data);
   const groupRef = ref(null);
   const listHeights = ref([]);
   const scrollY = ref(0);
   const currentIndex = ref(0);
 
   const fixedTitle = computed(() => {
+    if (scrollY.value < 0) {
+      return ''
+    }
     const currentGroup = props.data[currentIndex.value];
     return currentGroup ? currentGroup.title : "";
   });
