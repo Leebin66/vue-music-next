@@ -14,7 +14,8 @@ export default function userScroll(wrapperRef, options, emit) {
       ...options,
     });
 
-    if (options.probeType > 0) { // 监听dom滚动事件
+    if (options.probeType > 0) {
+      // 监听dom滚动事件
       scroll.value.on("scroll", (pos) => {
         emit("scroll", pos);
       });
