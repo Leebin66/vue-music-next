@@ -15,13 +15,20 @@ export default {
       type: Boolean,
       default: true,
     },
+    probeType: {
+      // https://better-scroll.github.io/docs/zh-CN/guide/base-scroll-options.html#probetype
+      type: Number,
+      default: 0,
+    },
   },
-  setup(props) {
+  emits: ["scroll"],
+  setup(props, { emit }) {
     const rootRef = ref(null);
-    useScroll(rootRef, props);
+    const scroll = useScroll(rootRef, props, emit);
 
     return {
       rootRef,
+      scroll,
     };
   },
 };

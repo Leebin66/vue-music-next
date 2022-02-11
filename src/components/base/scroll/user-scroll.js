@@ -5,7 +5,7 @@ BScroll.use(ObserveDOM);
 
 import { onMounted, onUnmounted, ref } from "vue";
 
-export default function userScroll(wrapperRef, options) {
+export default function userScroll(wrapperRef, options, emit) {
   const scroll = ref(null);
 
   onMounted(() => {
@@ -13,6 +13,12 @@ export default function userScroll(wrapperRef, options) {
       observeDOM: true,
       ...options,
     });
+
+    if (options.probeType > 0) { // 监听dom滚动事件
+      scroll.value.on("scroll", (pos) => {
+        emit("scroll", pos);
+      });
+    }
   });
 
   onUnmounted(() => {

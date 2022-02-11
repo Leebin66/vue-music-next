@@ -1,6 +1,6 @@
 <template>
   <!-- 推荐页面 -->
-  <div class="recommend" v-loading:[loadingText]="loading">
+  <div class="recommend" v-loading="loading">
     <scroll class="recommend-content">
       <div>
         <!-- 轮播图 -->
@@ -52,7 +52,6 @@ export default {
     return {
       sliders: [],
       albums: [],
-      loadingText: "正在载入...",
     };
   },
   computed: {
